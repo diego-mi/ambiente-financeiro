@@ -18,6 +18,8 @@ services:
         restart: always
         volumes:
             - ./api:/api
+        depends_on:
+            - "mysqldb"
     composer:
         image: composer/composer
         volumes:
@@ -40,7 +42,7 @@ services:
         container_name: mysql
         restart: always
         environment:
-            - MYSQL_DATABASE=test
+            - MYSQL_DATABASE=fin
             - MYSQL_ROOT_PASSWORD=root
             - MYSQL_USER=dev
             - MYSQL_PASSWORD=dev
