@@ -39,12 +39,8 @@ $app->pipe(ImplicitHeadMiddleware::class);
 $app->pipe(ImplicitOptionsMiddleware::class);
 $app->pipe(UrlHelperMiddleware::class);
 
-// Add more middleware here that needs to introspect the routing results; this
-// might include:
-//
-// - route-based authentication
-// - route-based validation
-// - etc.
+//Authentication
+$app->pipe(App\Core\Middleware\Authentication::class);
 
 // Register the dispatch middleware in the middleware pipeline
 $app->pipeDispatchMiddleware();
