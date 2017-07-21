@@ -18,16 +18,12 @@ return [
      */
     'doctrine' => [
         'connection' => [
-            'orm_default' => [
-                'driverClass' =>'Doctrine\DBAL\Driver\PDOMySql\Driver',
-                'params' => [
-                    'host'     => 'mysql',
-                    'port'     => '3306',
-                    'user'     => 'root',
-                    'password' => 'root',
-                    'dbname'   => 'fin',
-                    'unix_socket' => '/var/run/mysqld/mysqld.sock'
-                ]
+            'connection' => [
+                'orm_default' => [
+                    'params' => [
+                        'url' => 'mysql://root:root@mysql/fin',
+                    ],
+                ],
             ],
         ],
         'driver' => [

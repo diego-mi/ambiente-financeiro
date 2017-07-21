@@ -6,3 +6,5 @@ coveralls-upload.json
 phpunit.xml
 vendor/
 node_modules/
+
+data/db/mysql/*
